@@ -1,0 +1,21 @@
+// CSS RESET
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Variables
+:root {
+  --bg-light: $my;
+}
+
+// Universal
+html,
+body {
+  height: 100%;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}

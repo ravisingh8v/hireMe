@@ -1,0 +1,21 @@
+$primary: rgb(29, 29, 29);
+$secondary: rgb(218, 218, 218);
+$success: green;
+$info: pink;
+$warning: orange;
+$danger: red;
+$light: white;
+$dark: black;
+$my: gold;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+  "my": $my,
+);
