@@ -1,0 +1,16 @@
+// CSS RESET
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Universal
+html,
+body {
+  height: 100%;
+  color: $primary;
+}
+.c-pointer {
+  cursor: pointer;
+}

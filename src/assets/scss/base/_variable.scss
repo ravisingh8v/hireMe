@@ -1,0 +1,29 @@
+:root {
+  --light: white;
+  --dark-color: rgb(29, 29, 29);
+}
+
+$primary: rgb(29 29 29);
+$secondary: rgb(218, 218, 218);
+$success: green;
+$info: #17a2b8;
+$warning: orange;
+$danger: red;
+$light: white;
+$dark: black;
+$white: white;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+  "white": $white,
+);
+
+// font
+$font-family-base: "Poppins", sans-serif;
