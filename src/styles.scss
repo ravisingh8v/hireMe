@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap");
+
 @import "assets/icons/style.css";
 /* You can add global styles to this file, and also import other style files */
 
 @import "assets/scss/base/index";
 @import "assets/scss/layout/index";
-@import "assets/scss/vendors/index";
 @import "assets/scss/component/index";
+@import "assets/scss/vendors/index";
 @import "assets/scss/utilities/index";

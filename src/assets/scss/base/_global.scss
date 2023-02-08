@@ -5,17 +5,12 @@
   box-sizing: border-box;
 }
 
-// Variables
-:root {
-  --bg-light: $my;
-}
-
 // Universal
 html,
 body {
   height: 100%;
+  color: $primary;
 }
-
-.form-control:focus {
-  box-shadow: none;
+.c-pointer {
+  cursor: pointer;
 }

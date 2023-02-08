@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'hireMe';
-  src:  url('fonts/hireMe.eot?xtd1bu');
-  src:  url('fonts/hireMe.eot?xtd1bu#iefix') format('embedded-opentype'),
-    url('fonts/hireMe.ttf?xtd1bu') format('truetype'),
-    url('fonts/hireMe.woff?xtd1bu') format('woff'),
-    url('fonts/hireMe.svg?xtd1bu#hireMe') format('svg');
+  src:  url('fonts/hireMe.eot?atploe');
+  src:  url('fonts/hireMe.eot?atploe#iefix') format('embedded-opentype'),
+    url('fonts/hireMe.ttf?atploe') format('truetype'),
+    url('fonts/hireMe.woff?atploe') format('woff'),
+    url('fonts/hireMe.svg?atploe#hireMe') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,17 +25,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-write:before {
-  content: "\e900";
+.icon-magnifier:before {
+  content: "\e907";
 }
 .icon-clipboard-edit:before {
   content: "\e901";
 }
-.icon-edit-pencil:before {
-  content: "\e902";
-}
-.icon-user-add:before {
-  content: "\e903";
+.icon-search1:before {
+  content: "\e906";
 }
 .icon-brand:before {
   content: "\e976";
@@ -54,4 +51,19 @@
 }
 .icon-cancel-circle:before {
   content: "\ea0d";
+}
+.icon-write:before {
+  content: "\e900";
+}
+.icon-search:before {
+  content: "\e905";
+}
+.icon-cheveron-down:before {
+  content: "\e904";
+}
+.icon-edit-pencil:before {
+  content: "\e902";
+}
+.icon-user-add:before {
+  content: "\e903";
 }
