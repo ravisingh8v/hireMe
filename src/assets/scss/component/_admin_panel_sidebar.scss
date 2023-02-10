@@ -1,0 +1,11 @@
+.openCloseSidebar {
+  background-color: $primary;
+  padding: 10px;
+  color: $light;
+  left: 0;
+  bottom: 10%;
+}
+#sidebar:checked + .admin_panel_sidebar {
+  transform: translateX(-185px);
+  width: 0;
+}

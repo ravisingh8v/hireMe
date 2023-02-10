@@ -1,1 +1,8 @@
-<p>admin-panel works!</p>
+<div class="admin_panel_wrapper h-100 border d-flex">
+  <div class="admin_panel_sidebar">
+    <app-admin-panel-sidebar></app-admin-panel-sidebar>
+  </div>
+  <div class="admin_panel_router flex-grow-1 d-flex justify-content-center align-items-center">
+    <router-outlet></router-outlet>
+  </div>
+</div>

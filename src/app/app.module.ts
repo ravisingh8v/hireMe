@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { ProfileDropdownComponent } from './core/profile-dropdown/profile-dropdown.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent, ProfileDropdownComponent],
   imports: [
@@ -14,6 +14,7 @@ import { ProfileDropdownComponent } from './core/profile-dropdown/profile-dropdo
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
