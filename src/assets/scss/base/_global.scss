@@ -10,6 +10,7 @@ html,
 body {
   height: 100%;
   color: $primary;
+  overflow: hidden;
 }
 .c-pointer {
   cursor: pointer;

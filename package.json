@@ -8,6 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
+  "scripts": {
+    "start": "json-server --watch databse/employee.json"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^15.1.0",

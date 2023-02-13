@@ -5,33 +5,37 @@
       <h2><span class="text-info">Top</span> Profiles</h2>
     </div>
     <!-- search bar div  -->
-    <div class="d-flex  justify-content-sm-center justify-content-between align-items-center">
-
-      <div class="me-3">
-        <form action="">
+    <div class="">
+      <form action="" [formGroup]="form"
+        class="d-flex  justify-content-sm-center justify-content-between align-items-center">
+        <div class="me-3">
           <div class="search_wrapper border border-primary d-flex align-items-center bg-primary rounded">
             <input type="search" class="form-control border border-primary rounded" name="" id=""
-              placeholder="Search People" (keyup)="onSearchEmployee($event)">
+              placeholder="Search People" formControlName="search" [(ngModel)]="filter">
             <!-- <a href="javascript:void(0)" class="d-flex align-items-center h-100"><span
               class="icon-magnifier text-light px-2"></span></a> -->
           </div>
-        </form>
-      </div>
-      <div>
-        <span class="me-2">sort:</span>
-        <select name="" id="" class="ms-2">
-          <option value="">Hello</option>
-          <option value=""></option>
-          <option value=""></option>
-        </select>
-      </div>
+
+        </div>
+        <div class="d-flex align-items-center">
+          <span class="me-2 d-none d-sm-inline">sort:</span>
+          <select name="" id=""
+            class="form-select ms-0 bg-primary text-light ms-sm-2 border rounded border-2 border-primary"
+            (change)="sort($event)" formControlName="sort" [(ngModel)]="sorting">
+            <option value="" [selected]="true">ALL</option>
+            <option value="HTML">HTML</option>
+            <option value="HTML,CSS">HTML, CSS</option>
+            <option value="HTML,CSS,JAVASCRIPT">HTML, CSS, JS</option>
+          </select>
+        </div>
+      </form>
     </div>
   </div>
   <!-- card container  -->
   <section class="mt-4">
     <div class="row ge-1 gs-1 gt-1 gy-2">
 
-      <div class="col-12 col-xxl-3 col-xl-4 col-lg-6" *ngFor="let data of data | filter:filter">
+      <div class="col-12 col-xxl-3 col-xl-4 col-lg-6" *ngFor="let data of data | filter:filter | sort:sorting">
         <div class="card_wrapper text-light c-pointer p-3 rounded">
           <!-- cards top section  -->
           <div class="d-flex align-items-center ">
@@ -44,7 +48,14 @@
           </div>
           <!-- description about person  -->
           <div class="mt-4">
-            <h4 class="fs-4">{{data.description | truncate:[20,'...'] }}</h4>
+            <!-- solution 1  -->
+            <h4 class="fs-4">{{(data.description.length > 20) ? (data.description |
+              slice:0:20)+'...':(data.description)}} </h4>
+            <!-- solution 2 -->
+            <!-- <h4 class="fs-4">{{data.description | slice:0:20}} <span *ngIf="data.description.length>20">...</span> </h4> -->
+            <!-- solution 3 -->
+            <!-- <h4 class="fs-4">{{data.description | truncate:[20,'...']}}</h4> -->
+
           </div>
           <!-- Designation -->
           <div>
@@ -60,7 +71,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 </main>

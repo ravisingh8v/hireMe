@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
+import { OverlayService } from './service/overlay.service';
 @NgModule({
   declarations: [HeaderComponent],
   imports: [CommonModule, RouterModule],
   exports: [HeaderComponent],
+  providers: [],
 })
 export class CoreModule {}

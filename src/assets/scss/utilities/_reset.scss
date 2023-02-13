@@ -1,8 +1,22 @@
 a {
   text-decoration: none;
 }
-.form-control:focus {
+// select {
+//   -webkit-appearance: none;
+//   -moz-appearance: none;
+//   appearance: none;
+// }
+// select::-ms-expand {
+//   display: none;
+// }
+.form-control:focus,
+.form-select:focus {
   box-shadow: none;
+}
+
+.form-select option {
+  background-color: $light;
+  color: $dark;
 }
 ul,
 li {

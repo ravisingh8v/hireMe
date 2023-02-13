@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal, ComponentType } from '@angular/cdk/portal';
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class OverlayService {
   public overlayRef!: OverlayRef;
   constructor(private overlay: Overlay) {}

@@ -3,9 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { employeeForm } from 'src/app/admin-panel/admin.model';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class ApiService {
   public baseUrl: string;
   constructor(private http: HttpClient) {
