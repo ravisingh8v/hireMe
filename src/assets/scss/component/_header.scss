@@ -8,6 +8,14 @@
   }
 }
 
+.search_wrapper:hover {
+  background-color: $light !important;
+  a {
+    span {
+      color: $primary !important;
+    }
+  }
+}
 .profile_wrapper {
   height: 40px;
   width: 40px;

@@ -8,6 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
+  "scripts": {
+    "start": "json-server --watch databse/employee.json"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^15.1.0",
@@ -19,7 +22,9 @@
     "@angular/platform-browser": "^15.1.0",
     "@angular/platform-browser-dynamic": "^15.1.0",
     "@angular/router": "^15.1.0",
+    "@ng-select/ng-select": "^10.0.3",
     "bootstrap": "^5.1.3",
+    "json-server": "^0.17.1",
     "ngx-bootstrap": "^10.2.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

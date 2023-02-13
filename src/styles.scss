@@ -5,6 +5,15 @@
 
 @import "assets/scss/base/index";
 @import "assets/scss/layout/index";
-@import "assets/scss/component/index";
+
 @import "assets/scss/vendors/index";
+@import "assets/scss/component/index";
+
+// css reset
 @import "assets/scss/utilities/index";
+
+//  Overlay Import
+@import "~@angular/cdk/overlay-prebuilt.css";
+
+// ng select
+@import "~@ng-select/ng-select/themes/default.theme.css";
