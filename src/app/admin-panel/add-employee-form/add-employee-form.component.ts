@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Route, Router } from '@angular/router';
 import { ApiService } from 'src/app/core/service/api.service';
+import { employeeForm } from '../admin.model';
 
 @Component({
   selector: 'app-add-employee-form',
@@ -16,16 +17,18 @@ export class AddEmployeeFormComponent {
   public image_file!: File;
   public base64!: string;
   public preview_image: any;
+  public isSubmitted: boolean;
   constructor(
     public formb: FormBuilder,
     private domSanitizer: DomSanitizer,
     private apiService: ApiService,
     private router: Router
   ) {
+    this.isSubmitted = false;
     this.empForm = this.formb.group({
-      profile: [''],
-      fullName: ['', [Validators.required]],
-      description: ['', [Validators.required]],
+      profile: [[Validators.required]],
+      fullName: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]],
+      description: ['', [Validators.required, Validators.minLength(10)]],
       designation: ['', [Validators.required]],
       skills: ['', [Validators.required]],
     });
@@ -56,12 +59,15 @@ export class AddEmployeeFormComponent {
   }
 
   onSubmitForm() {
+    this.isSubmitted = true;
+    console.log(this.empForm);
     if (this.empForm.valid) {
       this.empForm.controls['profile'].setValue(this.base64);
       this.apiService.postData(this.empForm.value).subscribe((res) => {
         console.log(res);
         this.empForm.reset();
       });
+      this.isSubmitted = false;
     }
   }
 }

@@ -3,17 +3,39 @@
     <div class="d-flex flex-column w-100">
       <input type="file" name="" id="" (change)="fileSelect($event)">
       <!-- name  -->
-      <input type="text" placeholder="Enter Your Full Name" class="form-control my-2" formControlName="fullName">
+      <input type="text" placeholder="Enter Your Full Name" class="form-control my-2" formControlName="fullName"
+        [ngClass]="{'is-invalid': isSubmitted || (empForm.controls['fullName'].invalid && (empForm.controls['fullName'].dirty || empForm.controls['fullName'].touched))}">
+      <div *ngIf="isSubmitted || (empForm.controls['fullName'].dirty || empForm.controls['fullName'].touched)"
+        class="text-danger">
+        <p *ngIf="empForm.controls['fullName'].errors?.['required']">This Field is Required</p>
+      </div>
       <!-- description -->
-      <input type="text" placeholder="Describe Your Self" class="form-control my-2" formControlName="description">
+      <input type="text" placeholder="Describe Your Self" class="form-control my-2" formControlName="description"
+        [ngClass]="{'is-invalid':isSubmitted || (empForm.controls['description'].touched && (empForm.controls['description'].errors?.['minlength'] || empForm.controls['description'].invalid))}">
+      <div *ngIf="isSubmitted || (empForm.controls['description'].dirty || empForm.controls['description'].touched)"
+        class="text-danger">
+        <p *ngIf="empForm.controls['description'].errors?.['required']">This Field is Required</p>
+      </div>
       <!-- Desgination -->
       <ng-select class="my-2" [items]="designation" bindLabel="designation" bindValue="designation" [multiple]="true"
-        formControlName="designation" placeholder="Designation">
+        formControlName="designation" placeholder="Designation"
+        [ngClass]="{'border border-danger rounded':isSubmitted || (empForm.controls['designation'].invalid && (empForm.controls['designation'].dirty || empForm.controls['designation'].touched))}">
       </ng-select>
+      <div *ngIf="isSubmitted ||(empForm.controls['designation'].dirty || empForm.controls['designation'].touched)"
+        class="text-danger">
+        <p *ngIf="empForm.controls['designation'].errors?.['required']">This Field is Required</p>
+      </div>
+
       <!-- Skills  -->
       <ng-select class="my-2" [items]="skills" bindLabel="skill" bindValue="skill" [multiple]="true"
-        formControlName="skills" placeholder="Select cities">
+        formControlName="skills" placeholder="Select cities"
+        [ngClass]="{'border border-danger rounded': (isSubmitted || empForm.controls['skills'].invalid && (empForm.controls['skills'].dirty || empForm.controls['skills'].touched))}">
       </ng-select>
+      <div *ngIf="isSubmitted || (empForm.controls['skills'].dirty || empForm.controls['skills'].touched)"
+        class="text-danger">
+        <p *ngIf="empForm.controls['skills'].errors?.['required']">This Field is Required</p>
+      </div>
+      <!-- submit and reset button  -->
       <div class="mt-2 d-flex">
         <button type="reset" class="me-1 btn btn-danger text-light w-100">Reset</button>
         <button type="submit" class="ms-1 btn btn-primary text-light w-100">Submit</button>
